@@ -12,9 +12,14 @@
 把 dnsmasq.conf 放进 /etc  
 以守护进程方式启动 dnsmasq  
 在你的网络管理器里设置 dns 为 `127.0.0.1`  
+执行 `python2 chnroutes.py`  
+在生成的 vpn-up.sh 中 ip -batch 命令之前一行加入以下内容  
+> rc.d restart dnsmasq &&
+
+这里也准备了现成的路由表脚本 vpn-up.sh 和 vpn-down.sh 用作参考，但是仍然建议使用脚本重新生成  
 在你的配置文件里写入  
 > script-security 2  
-    up "/bin/sh /文件路径/vpn_up.sh"  
-    down "/bin/sh /文件路径/vpn_down.sh"  
+    up "/bin/sh /文件路径/vpn-up.sh"  
+    down "/bin/sh /文件路径/vpn-down.sh"  
 
 然后就玩蛋去吧
