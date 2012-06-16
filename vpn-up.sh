@@ -2,6 +2,8 @@
 
 OLDGW=$(ip route show 0/0 | head -n1 | grep 'via' | grep -Po '\d+\.\d+\.\d+\.\d+')
 
+#下面的命令负责每次启动 openvpn 时重置 dnsmasq 的缓存，解决可以已经发生的污染
+#不同系统下可能需要不同的命令，请自行修改
 rc.d restart dnsmasq &&
 
 ip -batch - <<EOF
