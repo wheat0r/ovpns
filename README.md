@@ -12,6 +12,8 @@
 把 dnsmasq.conf 放进 /etc  
 以守护进程方式启动 dnsmasq  
 在你的网络管理器里设置 dns 为 `127.0.0.1`  
+
+以下是 chnroutes 的使用方式，建议参考 [jimmy/chnroutes](https://github.com/jimmyxu/chnroutes) 的说明  
 执行 `python2 chnroutes.py`  
 在生成的 vpn-up.sh 中 ip -batch 命令之前一行加入以下内容  
 > rc.d restart dnsmasq &&
